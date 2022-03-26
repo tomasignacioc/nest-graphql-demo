@@ -7,6 +7,7 @@ import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PetsModule } from './pets/pets.module';
+import { OwnersModule } from './owners/owners.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { PetsModule } from './pets/pets.module';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql')
     }),
     TypeOrmModule.forRoot(),
-    PetsModule
+    PetsModule,
+    OwnersModule
   ],
   controllers: [AppController],
   providers: [AppService],
